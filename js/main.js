@@ -1,21 +1,35 @@
 
-// Cálculo del valor de un capital futuro
+// Búsqueda de subsecuencia en ADN
 
-let capital = parseFloat(prompt ("What is your capital [$] ?"));
-let tiempo = parseFloat(prompt ("How long time is your period [years] ?"));
-let interes = parseFloat(prompt ("What is your interest rate [%] ?"));
+function esta_en_adn() {
+    const subsecuencia = prompt("Ingrese la subsecuencia de ADN:");
 
-if (capital < 0) {
-    alert("El valor numerico del capital debe ser mayor o igual a 0");
+    if (!subsecuencia || !/^[actg]+$/i.test(subsecuencia)) {
+        alert("La subsecuencia ingresada no es válida.");
+        return;
+    }
+
+    const secuencia = "gtgggggggtttatgcctttagaacagcagactactgataactccaatcctgggttgaaaatgccaagggcgccagagagccaaacgatgagcgttggaccacaaacgataaaaactcac" +
+        "tttctccgtggggtgaaagcgattctttctggcccgtatccgccagcacttaaagttgcat" +
+        "tcggcgcggccctaccgctgctaattggggtaattgtcctaggattgtacgtaacgctt" +
+        "ggcgggcacagccgcaagaaagcccacgcagccgcgatagatgctttggtcgagaagcac" +
+        "gaagcatgctacaaggtccaagcaaagattgcacacggcaggcttgccttacagtccgct" +
+        "gtggtgtctgttgcggatgccagcatgcaacaactccagttcgtgcagcaaggaattctc" +
+        "atgtgtgtcggagagctcgacgatatgcagaagttccggacccgactggataatgaaatcagtgccatcaaccagcgaattcccagcattgtcgaggaggtaagaaaacacaccgacgat" +
+        "gcgcttgagtggaatcttgctagaaccaagaacattttagagggcactgaagagcgcctg" +
+        "aaggatatgggcaatgagttggtgcgctacctagacgatgctcgcgccctcattgaaaat" +
+        "gcacgtatagctgcaggatcaatgcaacacctcgttggtgatgaggtgagaaagcagctt" +
+        "gctgaggttctagtaaaagttgcagaagtaagtaatggctttattgcgcttaagaagagt" +
+        "gtatctggctatttggaaaaaagcagtggacttgttgctagggaagttagggcaatcctg" +
+        "gatgaccgcatgcgaagcctgcggaccatgtacaaaatgtgggatgcagaacaaaactcc" +
+        "gtagtcagcgtgtgtaccacgctccaaaaggcaagcatggaggctgccgcggtagcaagt";
+
+    const secuencia_minusculas = secuencia.toLowerCase();
+    const subsecuencia_minusculas = subsecuencia.toLowerCase();
+
+    if (secuencia_minusculas.includes(subsecuencia_minusculas)) {
+        alert("La subsecuencia está presente en la secuencia de ADN.");
+    } else {
+        alert("La subsecuencia no está presente en la secuencia de ADN.");
+    }
 }
-else if (tiempo <= 0) {
-    alert("El valor numerico del tiempo debe ser menor a 0");
-}
-else if (interes < 0 && interes > 100) {
-    alert("El valor numerico de la tasa de interes debe ser mayor a 0 y menor a 100");
-}
-
-let final = capital*((1+(interes/100))**tiempo);
-let capitalFinal = final.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-
-alert("Capital final es de: $"+ capitalFinal +" pesos");
