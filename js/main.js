@@ -1,17 +1,19 @@
-// Sumar rango de números
+// Número de aes (letra "a")
 
-let n1 = parseFloat(prompt("Dame el primer número "));
-let n2 = parseFloat(prompt("Dame el segundo número "));
+let palabra = prompt("Dame la palabra ");
 
-const sumarRango = (n1, n2) => {
+const numeroDeAes = (palabra) => {
 
     let contador = 0;
 
-    for (let i = n1 ; i <= n2; i++) {
-        contador += i;
+    for (let i = 0 ; i <= palabra.length; i++) {
+
+        if(palabra[i] === "a") {
+            contador++;
+        }     
     }
     return contador;
 }
 
-let res = sumarRango(n1, n2);
+let res = numeroDeAes(palabra);
 alert(res);
