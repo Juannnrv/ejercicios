@@ -1,19 +1,17 @@
-// FizzBuzz
+// Contar rango de números
 
-let num = parseFloat(prompt("Dame el número "))
+let n1 = parseFloat(prompt("Dame el primer número "));
+let n2 = parseFloat(prompt("Dame el segundo número "));
 
-const fizzBuzz = (num) => {
+const contarRango = (n1, n2) => {
+    let contador = 0;
 
-    if (num % 3 === 0 && num % 5 === 0) {
-        return "fizzbuzz";
+    for (let i = n1 + 1; i < n2; i++) {
+        contador++;
     }
-    else if (num % 5 === 0) {
-        return "buzz";
-    }
-    else if (num % 3 === 0) {
-        return "fizz" ;
-    }
+
+    return contador;
 }
 
-let res = fizzBuzz(num);
-alert(res)
+let res = contarRango(n1, n2);
+alert(res);
