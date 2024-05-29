@@ -1,17 +1,24 @@
-// Calcular impuestos
+//  IMC (índice de masa corporal)
 
-let edad = parseFloat(prompt("Indicame tu edad"));
-let ingresos = parseFloat(prompt("Dime los ingresos que recibes"));
+let peso = parseFloat(prompt("Indicame tu peso"));
+let altura = parseFloat(prompt("Indicame tu altura"));
 
-const calcularImpuestos = (edad, ingresos) => {
+const bmi = (peso, altura) => {
+    
+    imc = peso / (altura**2)
 
-    if(edad >= 18 && ingresos >= 1000) {
-        let porcentaje = ingresos * 0.4;
-        alert(porcentaje);
+    if (imc < 18.5) {
+        alert("Bajo de peso");
     }
-    else {
-        alert(0);
+    else if (imc > 18.5 && imc <= 24.9) {
+        alert("Normal");
+    }
+    else if (imc >= 25 && imc <= 29.9) {
+        alert("Sobrepeso");
+    }
+    else if (imc >= 30) {
+        alert("Obeso");
     }
 }
 
-console.log(calcularImpuestos(edad, ingresos))
+console.log(bmi(peso, altura));
