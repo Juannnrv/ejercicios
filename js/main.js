@@ -1,24 +1,22 @@
-//  IMC (índice de masa corporal)
+// Imprimir un arreglo
 
-let peso = parseFloat(prompt("Indicame tu peso"));
-let altura = parseFloat(prompt("Indicame tu altura"));
+const imprimirArreglo= () =>{
+    let elementos = [];
+    let continuar = true;
 
-const bmi = (peso, altura) => {
-    
-    imc = peso / (altura**2)
+    while (continuar) {
+        let elemento = prompt("Ingresa un elemento del arreglo, si deseas no agregar más dejalo vacío:");
 
-    if (imc < 18.5) {
-        alert("Bajo de peso");
+        if (elemento === null || elemento === "") {
+            continuar = false;
+        } else {
+            elementos.push(elemento);
+        }
     }
-    else if (imc > 18.5 && imc <= 24.9) {
-        alert("Normal");
-    }
-    else if (imc >= 25 && imc <= 29.9) {
-        alert("Sobrepeso");
-    }
-    else if (imc >= 30) {
-        alert("Obeso");
+
+    for (let i = 0; i < elementos.length; i++) {
+        console.log(elementos[i]);
     }
 }
 
-console.log(bmi(peso, altura));
+imprimirArreglo();
