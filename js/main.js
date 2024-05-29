@@ -1,17 +1,17 @@
-// Contraseña válida
+// Calcular impuestos
 
-const contraseñaValida = () => {
-    let contraseña = prompt("Dame la contraseña");
-    
-    if (contraseña === "2Fj(jjbFsuj" || contraseña === "eoZiugBf&g9") {
-        alert(true)
+let edad = parseFloat(prompt("Indicame tu edad"));
+let ingresos = parseFloat(prompt("Dime los ingresos que recibes"));
+
+const calcularImpuestos = (edad, ingresos) => {
+
+    if(edad >= 18 && ingresos >= 1000) {
+        let porcentaje = ingresos * 0.4;
+        alert(porcentaje);
     }
     else {
-        alert(false)
+        alert(0);
     }
 }
 
-console.log(contraseñaValida("2Fj(jjbFsuj"))
-console.log(contraseñaValida("eoZiugBf&g9"))
-console.log(contraseñaValida("hola")) 
-console.log(contraseñaValida("")) 
+console.log(calcularImpuestos(edad, ingresos))
