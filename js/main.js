@@ -1,22 +1,21 @@
-// Imprimir un arreglo
+// Número de likes
 
-const imprimirArreglo= () =>{
-    let elementos = [];
-    let continuar = true;
+let num = parseFloat(prompt("Dame el número"))
 
-    while (continuar) {
-        let elemento = prompt("Ingresa un elemento del arreglo, si deseas no agregar más dejalo vacío:");
+const likes = (num) => {
 
-        if (elemento === null || elemento === "") {
-            continuar = false;
-        } else {
-            elementos.push(elemento);
-        }
-    }
-
-    for (let i = 0; i < elementos.length; i++) {
-        console.log(elementos[i]);
+    if (num < 1000) {
+        return num.toString();
+    } 
+    else if (num < 1000000) {
+        let k = Math.floor(num / 1000);
+        return k.toString() + "K";
+    } 
+    else {
+        let m = Math.floor(num / 1000000);
+        return m.toString() + "M";
     }
 }
 
-imprimirArreglo();
+let res = likes(num);
+alert(res)
