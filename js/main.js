@@ -1,13 +1,14 @@
-// Capitalizar palabra
+// Calculo de expresión Matematica
 
-let palabra = prompt("Deme la palabra ");
+const a = parseFloat(prompt("Ingrese el valor de la propiedad a:"));
+const b = parseFloat(prompt("Ingrese el valor de la propiedad b:"));
+const c = parseFloat(prompt("Ingrese el valor de la propiedad c:"));
 
-const capitalizar = (str) => {
+const objeto = { a, b, c };
 
-    return str.split(' ')
-            .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase())
-            .join(' ');
-            
-}
+const calcularExpresion = ({ a, b, c }) => (a * b) + c;
 
-console.log(capitalizar(palabra));
+const resultado = calcularExpresion(objeto);
+
+alert(`El valor total calculado de la expresión es ${resultado}`);
+
