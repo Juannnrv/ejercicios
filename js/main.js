@@ -1,6 +1,6 @@
-// Sumar arreglo
+// Multiplicar arreglo
 
-const sumarArreglo = () => {
+const multiplicarArreglo = () => {
 
     let elementos = [];
     let continuar = true;   
@@ -15,13 +15,13 @@ const sumarArreglo = () => {
         }
     }
 
-    let contador = 0;
+    let contador = 1    ;
 
     for (let i = 0 ; i < elementos.length; i++) {
-        contador += elementos[i];
+        contador *= elementos[i];
     }
     return contador;
 }
 
-let res = sumarArreglo();
+let res = multiplicarArreglo();
 alert(res);
