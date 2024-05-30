@@ -1,6 +1,6 @@
-// Multiplicar arreglo
+// Remover ceros
 
-const multiplicarArreglo = () => {
+const removerCeros = () => {
 
     let elementos = [];
     let continuar = true;   
@@ -15,13 +15,11 @@ const multiplicarArreglo = () => {
         }
     }
 
-    let contador = 1    ;
+    let elementoAeliminar = 0
+    let nuevoarray = elementos.filter(item => item !== elementoAeliminar);
 
-    for (let i = 0 ; i < elementos.length; i++) {
-        contador *= elementos[i];
-    }
-    return contador;
+    return nuevoarray
 }
 
-let res = multiplicarArreglo();
-alert(res);
+let res = removerCeros();
+alert(res.join(", "));
