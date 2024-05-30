@@ -1,34 +1,13 @@
-// Transcribir ADN a ARN
+// Capitalizar palabra
 
-let cadenaADN = prompt("Por favor, ingrese la cadena de ADN:");
+let palabra = prompt("Deme la palabra ");
 
-const transcribir = (cadenaADN) => {
-    const mapa = {
-        "G": "C",
-        "C": "G",
-        "T": "A",
-        "A": "U"
-    };
+const capitalizar = (str) => {
 
-    let cadenaARN = "";
-
-    for (let i = 0; i < cadenaADN.length; i++) {
-        let nucleotidoADN = cadenaADN[i];
-        let nucleotidoARN = mapa[nucleotidoADN];
-
-        if (!nucleotidoARN) {
-            return "Error: Cadena de ADN contiene nucleótidos no válidos.";
-        }
-
-        cadenaARN += nucleotidoARN;
-    }
-
-    return cadenaARN;
+    return str.split(' ')
+            .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase())
+            .join(' ');
+            
 }
 
-
-let res = transcribir(cadenaADN);
-alert(res);
-
-
-
+console.log(capitalizar(palabra));
