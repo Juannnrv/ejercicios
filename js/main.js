@@ -1,4 +1,4 @@
-// Encontrar el número máximo
+// Encontrar el número mínimo
 
 const max = () => {
     
@@ -18,7 +18,7 @@ const max = () => {
         }
     }
 
-    let orden = array.sort((a, b) => b - a);
+    let orden = array.sort((a, b) => a - b);
 
     console.log(`El número máximo del Array de número es => ${orden[0]}`);
 }   
