@@ -1,15 +1,34 @@
-// Clonación de arreglos
+// Operaciones con listas en JavaScript
 
-let obj = {name : "Juan", age : 17};
+let arrayA = [];
+let arrayB = [];
 
-const clone = () => {
+const arrays = () => {
+    for (let i = 0; i < 10; i++) {
+        arrayA.push(parseInt(prompt(`Dame el elemento ${i + 1} del array A: `)));
+    }
     
-    let clonado = {...obj};
+    for (let i = 0; i < 10; i++) {
+        arrayB.push(parseInt(prompt(`Dame el elemento ${i + 1} del array B: `)));
+    }
 
-    clonado.name = "Andres"
+    let arrayCombinado = [...arrayA, ...arrayB];
+    console.log(arrayCombinado);   
 
-    return clonado
-    
+    let set = new Set(arrayCombinado);
+
+    console.log(set);    
+
+    let arrayC = [...set]
+
+    arrayA.sort((a, b) => a - b);
+    arrayB.sort((a, b) => a - b);
+    arrayC.sort((a, b) => a - b);
+
+    console.log(`A ordenado: ${arrayA.join(" ")} `);
+    console.log(`B ordenado: ${arrayB.join(" ")} `);
+    console.log(`C: ${arrayC.join(" ")} `);
 }
 
-console.log(clone());
+arrays();
+
