@@ -1,27 +1,27 @@
-// Encontrar palabras que empiecen por "a"
+//  Duplicar elementos de un arreglo
 
-const empiezanConA = () => {
+const duplicar = () => {
 
     let array = [];
     let seguir = true;
 
     while(seguir) {
-        let elementos = prompt("Indicame los palabras de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:")
+        let elementos = parseFloat(prompt("Indicame los números de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:"))
 
-        if (elementos === "") {
+        if(isNaN(elementos)) {
             seguir = false;
         }
         else {
+            elementos = parseFloat(elementos);
             array.push(elementos);
         }
     }
 
-    let palabras = () => {
-        return array.filter(array => array.toLowerCase().startsWith("a"));
-    }
+    let por = array.map(elemento => elemento * 2);
 
-    console.log(palabras());
+    console.log(por);
     
     }
 
-    empiezanConA()
+duplicar()
+
