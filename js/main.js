@@ -1,35 +1,27 @@
-// Encontrar números pares en un arreglo
+// Encontrar palabras que empiecen por "a"
 
-const pares = () => {
+const empiezanConA = () => {
 
     let array = [];
     let seguir = true;
 
     while(seguir) {
-        let elementos = parseFloat(prompt("Indicame los números de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:"))
+        let elementos = prompt("Indicame los palabras de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:")
 
-        if(isNaN(elementos)) {
+        if (elementos === "") {
             seguir = false;
         }
         else {
-            elementos = parseFloat(elementos);
             array.push(elementos);
         }
     }
 
-    let posicion = []
-    array.forEach((x, i) => {
-        
-        if(x % 2 === 0) {
-            posicion.push(i);
-            return i    
+    let palabras = () => {
+        return array.filter(array => array.toLowerCase().startsWith("a"));
+    }
 
-        }
-    })
-
-    console.log(posicion);
+    console.log(palabras());
     
     }
 
-pares()
-
+    empiezanConA()
