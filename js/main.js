@@ -1,17 +1,15 @@
-// Combinación de arreglos
+// Clonación de arreglos
 
-let array1 = [1, 2, 3, 4, 5, 6];
-let array2 = ["a", "b", "c", "d", "e", "f"];
+let obj = {name : "Juan", age : 17};
 
-const combinarArrays = (array1, array2) => {
+const clone = () => {
+    
+    let clonado = {...obj};
 
-    let combinado = [...array1, ...array2];
+    clonado.name = "Andres"
 
-    console.table(combinado);
-
-    return combinado
-
-
+    return clonado
+    
 }
 
-combinarArrays(array1, array2);
+console.log(clone());
