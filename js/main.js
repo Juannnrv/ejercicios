@@ -1,25 +1,28 @@
-// Generar contraseña
+// Encontrar números pares en un arreglo
 
-const password = () => {
+const pares = () => {
 
-    let contraseña = prompt("Indicame tu contraseña: ");
-    let nuevacontraseña = "";
+    let array = [];
+    let seguir = true;
 
-    for (let i = 0; i < contraseña.length; i++) {
+    while(seguir) {
+        let elementos = parseFloat(prompt("Indicame los números de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:"))
 
-        let letra = contraseña[i];
-        
-        letra = letra.toLowerCase();
-        letra = letra.replace(/ /g, "");
-        letra = letra.replace(/a/g, "4");
-        letra = letra.replace(/e/g, "3");
-        letra = letra.replace(/i/g, "1");
-        letra = letra.replace(/o/g, "0");
-
-        nuevacontraseña += letra;
+        if(isNaN(elementos)) {
+            seguir = false;
+        }
+        else {
+            elementos = parseFloat(elementos);
+            array.push(elementos);
+        }
     }
-    
-    console.log(nuevacontraseña);
-}
 
-password()
+    let pares = array.filter((x) => x % 2 === 0);
+
+    console.log(pares);
+    
+    }
+
+
+pares()
+
