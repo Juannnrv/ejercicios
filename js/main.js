@@ -1,26 +1,25 @@
-// Encontrar el número mínimo
+// Generar contraseña
 
-const max = () => {
-    
-    let array = [];
-    let seguir = true;
-    
-    while(seguir) {
+const password = () => {
+
+    let contraseña = prompt("Indicame tu contraseña: ");
+    let nuevacontraseña = "";
+
+    for (let i = 0; i < contraseña.length; i++) {
+
+        let letra = contraseña[i];
         
-        let num = parseFloat(prompt(`Dame los números, si quieres parar presiona enter sin escribir nada: `))
+        letra = letra.toLowerCase();
+        letra = letra.replace(/ /g, "");
+        letra = letra.replace(/a/g, "4");
+        letra = letra.replace(/e/g, "3");
+        letra = letra.replace(/i/g, "1");
+        letra = letra.replace(/o/g, "0");
 
-        if(isNaN(num)) {
-            seguir = false;
-        }
-        else {
-            num = parseFloat(num)
-            array.push(num);
-        }
+        nuevacontraseña += letra;
     }
+    
+    console.log(nuevacontraseña);
+}
 
-    let orden = array.sort((a, b) => a - b);
-
-    console.log(`El número máximo del Array de número es => ${orden[0]}`);
-}   
-
-max();
+password()
