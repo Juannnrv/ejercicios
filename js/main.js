@@ -1,34 +1,15 @@
-// Operaciones con listas en JavaScript
+// Barman
 
-let arrayA = [];
-let arrayB = [];
+let baldeA = 20 * 5 + 30 * 45 + 50 * 10;
+let baldeB = 30 * 5 + 20 * 45 + 60 * 10;
+let baldeC = 30 * 5 + 30 * 45 + 32 * 10;
 
-const arrays = () => {
-    for (let i = 0; i < 10; i++) {
-        arrayA.push(parseInt(prompt(`Dame el elemento ${i + 1} del array A: `)));
-    }
-    
-    for (let i = 0; i < 10; i++) {
-        arrayB.push(parseInt(prompt(`Dame el elemento ${i + 1} del array B: `)));
-    }
+console.log(`El precio total del balde A => $ ${baldeA}`);
+console.log(`El precio total del balde B => $ ${baldeB}`);
+console.log(`El precio total del balde C => $ ${baldeC}`);
 
-    let arrayCombinado = [...arrayA, ...arrayB];
-    console.log(arrayCombinado);   
+console.log("")
 
-    let set = new Set(arrayCombinado);
+let baldes =( baldeA * 10) + (baldeB * 4) + (baldeC * 3);
 
-    console.log(set);    
-
-    let arrayC = [...set]
-
-    arrayA.sort((a, b) => a - b);
-    arrayB.sort((a, b) => a - b);
-    arrayC.sort((a, b) => a - b);
-
-    console.log(`A ordenado: ${arrayA.join(" ")} `);
-    console.log(`B ordenado: ${arrayB.join(" ")} `);
-    console.log(`C: ${arrayC.join(" ")} `);
-}
-
-arrays();
-
+console.log(`El precio total de 10 baldes A, 4 baldes B y 3 baldes C => $ ${baldes}`);
