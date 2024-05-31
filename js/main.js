@@ -1,31 +1,17 @@
-// Validación calificación de estudiantes
+// Combinación de arreglos
 
-let obj = [
-    {
-        name: "Juan", 
-        score: 13
-    },
-    {
-        name: "Andres",
-        score: 90
-    },  
-    {
-        name: "Manolo",
-        score: 80
-    }, 
-    {
-        name: "Santiago",
-        score: 20
-    }
-];
+let array1 = [1, 2, 3, 4, 5, 6];
+let array2 = ["a", "b", "c", "d", "e", "f"];
 
-const exam = (students) => {
-    let passedStudents = students.filter(student => student.score >= 70);
-    if (passedStudents.length > 0) {
-        return `Los estudiantes que cumplen con la condición son: ${passedStudents.map(student => student.name).join(", ")}`;
-    } else {
-        return "Ningún estudiante cumple con la condición.";
-    }
-};
+const combinarArrays = (array1, array2) => {
 
-console.log(exam(obj));
+    let combinado = [...array1, ...array2];
+
+    console.table(combinado);
+
+    return combinado
+
+
+}
+
+combinarArrays(array1, array2);
