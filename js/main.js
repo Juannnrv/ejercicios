@@ -1,15 +1,26 @@
-// Barman
+// Encontrar el número máximo
 
-let baldeA = 20 * 5 + 30 * 45 + 50 * 10;
-let baldeB = 30 * 5 + 20 * 45 + 60 * 10;
-let baldeC = 30 * 5 + 30 * 45 + 32 * 10;
+const max = () => {
+    
+    let array = [];
+    let seguir = true;
+    
+    while(seguir) {
+        
+        let num = parseFloat(prompt(`Dame los números, si quieres parar presiona enter sin escribir nada: `))
 
-console.log(`El precio total del balde A => $ ${baldeA}`);
-console.log(`El precio total del balde B => $ ${baldeB}`);
-console.log(`El precio total del balde C => $ ${baldeC}`);
+        if(isNaN(num)) {
+            seguir = false;
+        }
+        else {
+            num = parseFloat(num)
+            array.push(num);
+        }
+    }
 
-console.log("")
+    let orden = array.sort((a, b) => b - a);
 
-let baldes =( baldeA * 10) + (baldeB * 4) + (baldeC * 3);
+    console.log(`El número máximo del Array de número es => ${orden[0]}`);
+}   
 
-console.log(`El precio total de 10 baldes A, 4 baldes B y 3 baldes C => $ ${baldes}`);
+max();
