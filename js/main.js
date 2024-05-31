@@ -17,12 +17,19 @@ const pares = () => {
         }
     }
 
-    let pares = array.filter((x) => x % 2 === 0);
+    let posicion = []
+    array.forEach((x, i) => {
+        
+        if(x % 2 === 0) {
+            posicion.push(i);
+            return i    
 
-    console.log(pares);
+        }
+    })
+
+    console.log(posicion);
     
     }
-
 
 pares()
 
