@@ -1,27 +1,18 @@
-// Encontrar palabras que terminan en "s"
+// Imprimir una matriz
 
-const terminanConS = () => {
+const imprimirMatriz = () => {
 
-    let array = [];
-    let seguir = true;
+    let matriz = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
 
-    while(seguir) {
-        let elementos = prompt("Indicame los palabras de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:")
+    matriz.forEach(fila => {
+        fila.forEach(elemento => {
+            console.log(elemento);
+        });
+    });
+}
 
-        if (elementos === "") {
-            seguir = false;
-        }
-        else {
-            array.push(elementos);
-        }
-    }
-
-    let palabras = () => {
-        return array.filter(array => array.toLowerCase().endsWith("s"));
-    }
-
-    console.log(palabras());
-    
-    }
-
-    terminanConS()
+imprimirMatriz()
