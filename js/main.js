@@ -1,27 +1,27 @@
-//  Duplicar elementos de un arreglo
+// Encontrar palabras que terminan en "s"
 
-const duplicar = () => {
+const terminanConS = () => {
 
     let array = [];
     let seguir = true;
 
     while(seguir) {
-        let elementos = parseFloat(prompt("Indicame los números de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:"))
+        let elementos = prompt("Indicame los palabras de tu array, si no quieres agregar mas elementos presiona enter sin escribir nada:")
 
-        if(isNaN(elementos)) {
+        if (elementos === "") {
             seguir = false;
         }
         else {
-            elementos = parseFloat(elementos);
             array.push(elementos);
         }
     }
 
-    let por = array.map(elemento => elemento * 2);
+    let palabras = () => {
+        return array.filter(array => array.toLowerCase().endsWith("s"));
+    }
 
-    console.log(por);
+    console.log(palabras());
     
     }
 
-duplicar()
-
+    terminanConS()
