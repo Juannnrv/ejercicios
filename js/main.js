@@ -1,29 +1,21 @@
-// Número de asteriscos en un arreglo
+// Distancia entre dos strings
 
-const numAsteriscos = () => {
+let palabra1 = prompt("Dame la primera palabra: ");
+let palabra2 = prompt("Dame la segunda palabra: ");
 
-    let matriz = [
-        ['*', '', '*'],
-        ['', '*', ''],
-        ['*', '', '*']
-    ];
+const distancia = (str1, str2) => {
     let contador = 0;
-
-    for (let i = 0; i < matriz.length; i++) {
-        for (let j = 0; j < matriz[i].length; j++) {
-
-            let asteriscos = matriz[i][j];
-
-        switch(asteriscos) {
-            case "*":
-                contador++;
-                break;
-            }
-
+    
+    for (let i = 0; i < Math.min(str1.length, str2.length); i++) {
+        if (str1[i] !== str2[i]) {
+            contador++;
         }
     }
-        console.log(contador); 
+
+    contador += Math.abs(str1.length - str2.length);
+
+    return contador;
 }
 
-numAsteriscos();
-
+let resultado = distancia(palabra1, palabra2);
+console.log(resultado);
