@@ -2,19 +2,26 @@
 
 const numAsteriscos = () => {
 
-    let array = ['', '*', '', '*'];
+    let matriz = [
+        ['*', '', '*'],
+        ['', '*', ''],
+        ['*', '', '*']
+    ];
     let contador = 0;
 
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
 
-        let asteriscos = array[i];
+            let asteriscos = matriz[i][j];
 
         switch(asteriscos) {
             case "*":
                 contador++;
                 break;
             }
+
         }
+    }
         console.log(contador); 
 }
 
