@@ -1,49 +1,22 @@
-// Traducir palabras a números
+// Número de asteriscos en un arreglo
 
-const numerosAPalabras = () => {
+const numAsteriscos = () => {
 
-    let array = ["cinco", "seis", "siete", "ocho", "nueve"];
-    let nuevo = [];
+    let array = ['', '*', '', '*'];
+    let contador = 0;
 
     for (let i = 0; i < array.length; i++) {
 
-        num = array[i].toString();
+        let asteriscos = array[i];
 
-        switch(num) {
-            case "cero":
-                nuevo.push(0);
+        switch(asteriscos) {
+            case "*":
+                contador++;
                 break;
-            case "uno":
-                nuevo.push(1);
-                break;
-            case "dos":
-                nuevo.push(2);
-                break;
-            case "tres":
-                nuevo.push(3);
-                break;
-            case "cuatro":
-                nuevo.push(4);
-                break;
-            case "cinco":
-                nuevo.push(5);
-                break;
-            case "seis":
-                nuevo.push(6);
-                break;
-            case "siete":
-                nuevo.push(7);
-                break;
-            case "ocho":
-                nuevo.push(8);
-                break;
-            case "nueve":
-                nuevo.push(9);
-                break;
+            }
         }
-    }
-    console.log([nuevo.join(", ")]);
+        console.log(contador); 
 }
 
-numerosAPalabras();
+numAsteriscos();
 
