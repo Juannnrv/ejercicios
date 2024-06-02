@@ -1,8 +1,8 @@
-// Traducir números a palabras
+// Traducir palabras a números
 
 const numerosAPalabras = () => {
 
-    let array = [5, 6, 7, 8, 9];
+    let array = ["cinco", "seis", "siete", "ocho", "nueve"];
     let nuevo = [];
 
     for (let i = 0; i < array.length; i++) {
@@ -10,35 +10,35 @@ const numerosAPalabras = () => {
         num = array[i].toString();
 
         switch(num) {
-            case "0":
-                nuevo.push("cero");
+            case "cero":
+                nuevo.push(0);
                 break;
-            case "1":
-                nuevo.push("uno");
+            case "uno":
+                nuevo.push(1);
                 break;
-            case "2":
-                nuevo.push("dos");
+            case "dos":
+                nuevo.push(2);
                 break;
-            case "3":
-                nuevo.push("tres");
+            case "tres":
+                nuevo.push(3);
                 break;
-            case "4":
-                nuevo.push("cuatro");
+            case "cuatro":
+                nuevo.push(4);
                 break;
-            case "5":
-                nuevo.push("cinco");
+            case "cinco":
+                nuevo.push(5);
                 break;
-            case "6":
-                nuevo.push("seis");
+            case "seis":
+                nuevo.push(6);
                 break;
-            case "7":
-                nuevo.push("siete");
+            case "siete":
+                nuevo.push(7);
                 break;
-            case "8":
-                nuevo.push("ocho");
+            case "ocho":
+                nuevo.push(8);
                 break;
-            case "9":
-                nuevo.push("nueve");
+            case "nueve":
+                nuevo.push(9);
                 break;
         }
     }
